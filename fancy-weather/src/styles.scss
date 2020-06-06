@@ -1,0 +1,41 @@
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+  font-family: 'MontserratRegular';
+  src: url('./assets/fonts/Monsterrat-regular.woff') format('woff'),
+  url('./assets/fonts/Monsterrat-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MontserratMedium';
+  src: url('./assets/fonts/Monsterrat-medium.woff') format('woff'),
+  url('./assets//fonts/Monsterrat-medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto.woff') format('woff'),
+  url('./assets/fonts/Roboto.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* Heder-colors */
+ --header-button-color: rgba(128, 128, 128, 0.7);
+ --header-button-inactive: rgba(60, 60, 60, 0.7);
+ --header-button-hover: #30D5C8;
+
+ /* font-color */
+ --font-color: #ffffff;
+
+ /* input */
+ --input-background:  rgba(128, 128, 128, 0.5);
+
+}
