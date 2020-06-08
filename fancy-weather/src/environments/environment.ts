@@ -6,6 +6,12 @@ export const environment = {
   production: false,
   ipinfo: {
     token: '9c9830191a53d9',
+  },
+  openWeatherAPI: {
+    token: '1e6dd08b3203b2176d205376ba15ee0f',
+  },
+  unsplashAPI: {
+    token: '66885fc7fe227d6764b5742cd81bda6fca31bc5bfd638ead556e1707625b4244',
   }
 
 };

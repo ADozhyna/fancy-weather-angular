@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GetData } from '../../services/get-data.service.service';
+import { GetData } from '../../services/get-data.service';
+import { Location } from '../../models/location.model';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,11 @@ import { GetData } from '../../services/get-data.service.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public getData: GetData) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getData.getLocation().subscribe(data => console.log(data));
+
+
   }
 
 }

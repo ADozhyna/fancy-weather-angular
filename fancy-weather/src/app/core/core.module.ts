@@ -4,15 +4,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { WrapperComponent } from './components/wrapper/wrapper.component';
+import { ForecastComponent } from './components/forecast/forecast.component';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, WrapperComponent, ForecastComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
     MatInputModule,
     HttpClientModule,
   ],
-  exports: [HeaderComponent]
+ exports: [HeaderComponent, WrapperComponent]
 })
 export class CoreModule { }

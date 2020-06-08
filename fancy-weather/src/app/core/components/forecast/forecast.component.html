@@ -1,0 +1,37 @@
+<ng-container *ngIf = "weatherData">
+<h1>{{city}}, {{country}}</h1>
+  <p class="date">{{date}}</p>
+  <div class="current-weather">
+    <p class="temperature">{{deg}}&deg;</p>
+    <div class="description">
+      <span class="weather-icon"></span>
+      <p class="weather-description">{{description}}</p>
+      <p><span class="static-element">Wind:</span> {{wind}} <span class="static-element">km/h</span></p>
+      <p><span class="static-element">Feels like:</span> {{feels}}&deg;<span class="feels-deg"></span></p>
+      <p><span class="static-element">Humidity: </span>{{humidity}} %</p>
+    </div>
+  </div>
+  <!--<div class="forecast">
+    <div class="forecast-block">
+      <p class="day-week">${dayWeek[0]}</p>
+      <div class="deg">
+        <p class="temp-day">${forecastDeg[0]}°</p>
+        <span class="weather-icon"><i class="owf owf-${iconSrc[0]} owf-3x"></i></span>
+      </div>
+    </div>
+    <div class="forecast-block">
+      <p class="day-week">${dayWeek[1]}</p>
+      <div class="deg">
+        <p class="temp-day">${forecastDeg[1]}°</p>
+        <span class="weather-icon"><i class="owf owf-${iconSrc[1]} owf-3x"></i></span>
+      </div>
+    </div>
+    <div class="forecast-block">
+      <p class="day-week">${dayWeek[2]}</p>
+      <div class="deg">
+        <p class="temp-day">${forecastDeg[2]}°</p>
+        <span class="weather-icon"><i class="owf owf-${iconSrc[2]} owf-3x"></i></span>
+      </div>
+    </div>
+  </div> -->
+</ng-container>
