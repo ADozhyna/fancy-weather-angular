@@ -20,18 +20,19 @@ export class ForecastComponent implements OnInit {
   public humidity: number;
   public description: string;
   public date: string;
+  public dayForecast: Forecast[];
 
   public renderDate(timezone): string {
     const timezoneOffset: number = timezone / 3600;
     const locTime: Date = new Date();
     const ms: number = locTime.getTime() + (locTime.getTimezoneOffset() * 60000) + timezoneOffset * 3600000;
     const time: Date = new Date(ms);
-    const hours = time.getHours();
-    const minutes = time.getMinutes();
-    const weekDay = week[time.getDay()];
-    const year = time.getFullYear();
-    const day = time.getDate();
-    const monthString = month[time.getMonth()];
+    const hours: number = time.getHours();
+    const minutes: number = time.getMinutes();
+    const weekDay: String = week[time.getDay()];
+    const year: number = time.getFullYear();
+    const day: number = time.getDate();
+    const monthString: string = month[time.getMonth()];
     let minString: string;
     let hourString: string;
     if (hours < 10) hourString = `0${hours}`;
@@ -59,6 +60,8 @@ export class ForecastComponent implements OnInit {
       this.description = descr.description;
       this.wind = wind.speed;
       this.date = this.renderDate(timezone);
+      this.dayForecast = list.filter((el, i) => i % 8 === 0).splice(1, 3);
+      console.log(this.dayForecast);
       setInterval(() => {
         this.date = this.renderDate(timezone);
       }, 60000)

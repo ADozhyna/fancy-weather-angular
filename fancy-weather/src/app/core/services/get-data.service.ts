@@ -30,8 +30,8 @@ export class GetData {
     return this.http.get<Weather>(url);
   }
 
-  public getLinkToImage(): Observable<Image> {
-    const url = `https://api.unsplash.com/search/photos?page=1&per_page=100&orientation=landscape&query=summer&client_id=${this.imageToken}`;
+  public getLinkToImage(weatherDescription: string, season: string, time: string): Observable<Image> {
+    const url = `https://api.unsplash.com/search/photos?page=1&per_page=100&orientation=landscape&query=${weatherDescription}-${season}-${time}&client_id=${this.imageToken}`;
     return this.http.get<Image>(url);
   }
 

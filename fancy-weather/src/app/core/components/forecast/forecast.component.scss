@@ -1,0 +1,31 @@
+h1 {
+  font-family: MontserratMedium, sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: var(--font-color);
+}
+
+.date {
+  font-family: MontserratRegular, sans-serif;
+  font-size: 14px;
+  color: var(--font-color);
+}
+
+.current-weather {
+  .temperature {
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    font-size: 250px;
+    color: var(--font-color);
+  }
+
+  .description {
+    font-family: MontserratMedium, sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--font-color);
+    p {
+      padding: 10px;
+    }
+  }
+}

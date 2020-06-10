@@ -1,0 +1,16 @@
+.forecast-block {
+  .day-week {
+    font-family: MontserratMedium, sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: var(--font-color);
+  }
+  .deg {
+    p {
+      font-family: Roboto, sans-serif;
+      font-size: 55px;
+      font-weight: bold;
+      color: var(--font-color);
+    }
+  }
+}

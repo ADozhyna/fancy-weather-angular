@@ -271,3 +271,5 @@ export  const week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 export const weekAll = ['Sunday', 'Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday', 'Saturday'];
 
 export const staticData = ['wind', 'm/s', 'feels like', 'humidity', 'Latitude', 'Longitude'];
+
+export const seasons = ['winter', 'winter', 'spring', 'spring', 'spring', 'summer', 'summer', 'summer', 'autumn', 'autumn', 'autumn', 'winter']

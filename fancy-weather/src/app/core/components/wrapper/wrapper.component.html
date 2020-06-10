@@ -1,2 +1,10 @@
-<app-header></app-header>
-<app-forecast [weatherData]="weather"></app-forecast>
+<div class="container" [ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(&quot;' + src + '&quot;)'}">
+  <app-header></app-header>
+  <div class="data-container" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <app-forecast [weatherData]="weather"></app-forecast>
+    <app-map [coordinates]="coordinates"></app-map>
+  </div>
+</div>
+
+
+

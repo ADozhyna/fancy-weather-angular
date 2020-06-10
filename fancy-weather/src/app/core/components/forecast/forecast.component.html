@@ -1,7 +1,7 @@
 <ng-container *ngIf = "weatherData">
 <h1>{{city}}, {{country}}</h1>
   <p class="date">{{date}}</p>
-  <div class="current-weather">
+  <div class="current-weather" fxLayout="row wrap" fxLayoutAlign="space-between center">
     <p class="temperature">{{deg}}&deg;</p>
     <div class="description">
       <span class="weather-icon"></span>
@@ -11,27 +11,7 @@
       <p><span class="static-element">Humidity: </span>{{humidity}} %</p>
     </div>
   </div>
-  <!--<div class="forecast">
-    <div class="forecast-block">
-      <p class="day-week">${dayWeek[0]}</p>
-      <div class="deg">
-        <p class="temp-day">${forecastDeg[0]}°</p>
-        <span class="weather-icon"><i class="owf owf-${iconSrc[0]} owf-3x"></i></span>
-      </div>
-    </div>
-    <div class="forecast-block">
-      <p class="day-week">${dayWeek[1]}</p>
-      <div class="deg">
-        <p class="temp-day">${forecastDeg[1]}°</p>
-        <span class="weather-icon"><i class="owf owf-${iconSrc[1]} owf-3x"></i></span>
-      </div>
-    </div>
-    <div class="forecast-block">
-      <p class="day-week">${dayWeek[2]}</p>
-      <div class="deg">
-        <p class="temp-day">${forecastDeg[2]}°</p>
-        <span class="weather-icon"><i class="owf owf-${iconSrc[2]} owf-3x"></i></span>
-      </div>
-    </div>
-  </div> -->
+  <div class="forecast-day" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <app-forecast-day *ngFor="let item of dayForecast" [dayForecast]="item"></app-forecast-day>
+  </div>
 </ng-container>
