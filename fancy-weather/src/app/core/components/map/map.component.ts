@@ -50,7 +50,7 @@ export class MapComponent implements OnInit {
 
   public ngOnChanges(changes: { [propKey: string]: SimpleChange} ): void {
     if (changes.coordinates.currentValue) {
-      console.log(this.coordinates)
+      //console.log(this.coordinates)
       ymaps.load('https://api-maps.yandex.ru/2.1/?apikey=9382a77f-f230-4977-acc4-f2a1b75a8bec&lang=en_US').then(maps => {
       this.map = new maps.Map('map', {
         center: this.coordinates,

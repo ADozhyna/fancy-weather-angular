@@ -8,9 +8,10 @@ import { WrapperComponent } from './components/wrapper/wrapper.component';
 import { ForecastComponent } from './components/forecast/forecast.component';
 import { ForecastDayComponent } from './components/forecast-day/forecast-day.component';
 import { MapComponent } from './components/map/map.component';
+import { CoordinatesComponent } from './components/coordinates/coordinates.component';
 
 @NgModule({
-  declarations: [HeaderComponent, WrapperComponent, ForecastComponent, ForecastDayComponent, MapComponent],
+  declarations: [HeaderComponent, WrapperComponent, ForecastComponent, ForecastDayComponent, MapComponent, CoordinatesComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,

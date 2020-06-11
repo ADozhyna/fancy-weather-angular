@@ -20,6 +20,7 @@ export class ForecastComponent implements OnInit {
   public humidity: number;
   public description: string;
   public date: string;
+  public iconIdClass: string;
   public dayForecast: Forecast[];
 
   public renderDate(timezone): string {
@@ -58,6 +59,7 @@ export class ForecastComponent implements OnInit {
       this.feels = Math.round(main.feels_like);
       this.humidity = Math.round(main.humidity);
       this.description = descr.description;
+      this.iconIdClass = `owi owi-${descr.icon}`;
       this.wind = wind.speed;
       this.date = this.renderDate(timezone);
       this.dayForecast = list.filter((el, i) => i % 8 === 0).splice(1, 3);

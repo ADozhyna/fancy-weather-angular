@@ -1,4 +1,5 @@
 @import './_reset.scss';
+@import './_open-weather-icons.scss';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-size: cover; background-position: center; background-repeat: no-repeat; }
@@ -38,5 +39,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 
  /* input */
  --input-background:  rgba(128, 128, 128, 0.5);
+
+ /* weather-icons */
+
+ .owi {
+   font-size: 100px;
+ }
 
 }

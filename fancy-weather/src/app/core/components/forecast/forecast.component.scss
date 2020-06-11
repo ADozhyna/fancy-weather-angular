@@ -9,14 +9,16 @@ h1 {
   font-family: MontserratRegular, sans-serif;
   font-size: 14px;
   color: var(--font-color);
+  padding-top: 10px;
 }
 
 .current-weather {
   .temperature {
     font-family: Roboto, sans-serif;
     font-weight: bold;
-    font-size: 250px;
+    font-size: 200px;
     color: var(--font-color);
+    padding: 30px;
   }
 
   .description {
