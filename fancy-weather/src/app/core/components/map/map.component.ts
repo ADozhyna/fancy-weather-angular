@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input, SimpleChange, Output, EventEmitter } from '@angular/core';
 import ymaps from 'ymaps';
 
 @Component({
@@ -10,6 +10,10 @@ export class MapComponent implements OnInit {
 
   constructor() { }
   @Input() public coordinates;
+  @Input() public searchText;
+
+  @Output() public coords = new EventEmitter<any>();
+
   public map: any;
 
 
@@ -48,24 +52,43 @@ export class MapComponent implements OnInit {
   } */
 }
 
-  public ngOnChanges(changes: { [propKey: string]: SimpleChange} ): void {
-    if (changes.coordinates.currentValue) {
+  public ngOnChanges(changes/*: { [propKey: string] */: SimpleChange ): void {
+    /*if (changes.currentValue) { */
       //console.log(this.coordinates)
       ymaps.load('https://api-maps.yandex.ru/2.1/?apikey=9382a77f-f230-4977-acc4-f2a1b75a8bec&lang=en_US').then(maps => {
       this.map = new maps.Map('map', {
         center: this.coordinates,
         zoom: 10,
+      }, {
+        autoFitToViewport: 'always',
+        searchControlProvider: 'yandex#search'
       });
-      /*new maps.geocode('Москва', {result: 1}).then(res => {
-        console.log(res);
-      }, err => {
-        console.log(err);
-      }); */
-      //this.renderRoute();
-    })
-      .catch(error => console.log('Failed to load Yandex Maps', error));
+      if (this.searchText) {
+        maps.geocode(this.searchText, {result: 1}).then(res => {
+        const firstGeoObject = res.geoObjects.get(0);
+        console.log(firstGeoObject)
+
+        this.coordinates = firstGeoObject.geometry.getCoordinates();
+
+        const bounds = firstGeoObject.properties.get('boundedBy');
+
+        this.map.geoObjects.add(firstGeoObject);
+        console.log(this.map);
+        this.map.setCenter(this.coordinates);
+        this.map.setBounds(bounds, {
+        checkZoomRange: true,
+       });
+     }, err => {
+          console.log(err);
+        });
+      }
+     /*
+      //this.renderRoute(); */
+      });
+      //.catch(error => console.log('Failed to load Yandex Maps', error));
+    //}
+
   }
 
-}
 }
 

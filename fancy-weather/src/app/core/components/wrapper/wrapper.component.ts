@@ -14,15 +14,22 @@ export class WrapperComponent implements OnInit {
 
   public weather: Weather;
   public src: string = '';
-  public coordinates: string[];
+  public coordinates: string[] = [];
+  public searchText: string = '';
+
+  public onSearch(sity: string) {
+    this.searchText = sity;
+    console.log(this.searchText);
+  }
 
   ngOnInit(): void {
     this.getData.getLocation().subscribe(data => {
       this.getData.ipinfoResponse = data;
 
-      const { loc } = data;
+      const { loc, city } = data;
       this.coordinates = loc.split(',');
-      this.getData.getForecast(this.coordinates[0], this.coordinates[1]).subscribe(data => {
+      this.searchText = city;
+      this.getData.getForecast(this.searchText).subscribe(data => {
         this.getData.weatherResponse = data;
         this.weather = data;
         const { list } = this.weather;

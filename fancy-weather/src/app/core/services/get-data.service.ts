@@ -25,8 +25,8 @@ export class GetData {
 
   }
 
-  public getForecast(lat: string, lon: string): Observable<Weather> {
-    const url: string = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&lang=en&units=metric&APPID=${this.weatherToken}`;
+  public getForecast(city: string): Observable<Weather> {
+    const url: string = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=en&units=metric&APPID=${this.weatherToken}`;
     return this.http.get<Weather>(url);
   }
 

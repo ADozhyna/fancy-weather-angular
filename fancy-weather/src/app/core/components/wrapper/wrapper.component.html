@@ -1,9 +1,9 @@
 <div class="container" [ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(&quot;' + src + '&quot;)'}">
-  <app-header></app-header>
+  <app-header (search)="onSearch($event)"></app-header>
   <div class="data-container" fxLayout="row wrap" fxLayoutAlign="space-between stretch">
     <app-forecast [weatherData]="weather"></app-forecast>
     <div class="map-container">
-      <app-map [coordinates]="coordinates"></app-map>
+      <app-map [coordinates]="coordinates" [searchText]="searchText"></app-map>
       <app-coordinates [coordinates]="coordinates"></app-coordinates>
     </div>
 

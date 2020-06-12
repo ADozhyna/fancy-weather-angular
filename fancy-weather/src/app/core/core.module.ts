@@ -9,6 +9,7 @@ import { ForecastComponent } from './components/forecast/forecast.component';
 import { ForecastDayComponent } from './components/forecast-day/forecast-day.component';
 import { MapComponent } from './components/map/map.component';
 import { CoordinatesComponent } from './components/coordinates/coordinates.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [HeaderComponent, WrapperComponent, ForecastComponent, ForecastDayComponent, MapComponent, CoordinatesComponent],
@@ -17,6 +18,7 @@ import { CoordinatesComponent } from './components/coordinates/coordinates.compo
     FlexLayoutModule,
     MatInputModule,
     HttpClientModule,
+    FormsModule
   ],
  exports: [HeaderComponent, WrapperComponent]
 })

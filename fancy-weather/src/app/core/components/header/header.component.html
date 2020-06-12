@@ -11,6 +11,6 @@
   </div>
 </div>
   <form class="search-form" fxLayout="row" fxLayoutAlign="flex-end stretch">
-    <input type="text" class="search-input" placeholder="Search city">
-    <button class="search">Search</button>
+    <input type="text" class="search-input" name="sity" placeholder="Search city" [(ngModel)]="searchText">
+    <button class="search" (click)="onSearch()">Search</button>
   </form>
